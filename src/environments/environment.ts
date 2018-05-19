@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  auth0: {
+    domain: 'nicoavila.auth0.com',
+    clientID: 'x568hv1fgFUsSilzptJfCTbNfT0rv4YU',
+    connection: 'Username-Password-Authentication',
+    audience: 'https://nicoavila.auth0.com/userinfo',
+    responseType: 'token id_token',
+    scope: 'openid profile email user_metadata'
+  },
+  returnUrl: 'http://localhost:4200',
+  apiEndpoint: 'http://api.nicoavila.cl/'
 };
 
 /*

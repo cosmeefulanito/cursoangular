@@ -1,0 +1,21 @@
+<div>
+    <a [routerLink]="['/dashboard/proyectos/nuevo']" class="green btn btn-small">Crear nuevo proyecto</a>
+</div>
+<table class="table hightlight">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{project.name}} </td>
+      <td>
+        <a [routerLink]="['/dashboard/proyectos/editar', project.id]" class="green btn btn-small">Editar</a>
+        <button (click)="eliminarProyecto(project.id)" class="red btn btn-small">Borrar</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+.layout_container{
+    display: flex;
+    height: 100%;
+}
+
+app-sidebar{
+    width: 15%;
+    height: 100%;
+    background:green;
+
+}
+
+.content{
+    width: 100%;
+    padding: 30px;
+}
