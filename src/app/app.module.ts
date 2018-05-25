@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StorageService } from './services/storage/storage.service';
 import { ApiService } from './services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +19,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
 import { NewProjectComponent } from './pages/projects/new-project/new-project.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { NewProjectComponent } from './pages/projects/new-project/new-project.co
     NavbarComponent,
     EditProjectComponent,
     NewProjectComponent,
+    CounterComponent,
     
   ],
   imports: [

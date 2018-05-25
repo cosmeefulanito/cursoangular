@@ -28,4 +28,15 @@ export class ProjectsComponent implements OnInit {
     })
   }
 
+  public eliminarProyecto(proyectoId){
+    this.api.deleteProyecto(this.token,proyectoId).subscribe(()=>{
+      this.projects =[];
+      this.api.getProyectos(this.token).subscribe((proyecto:any)=>{
+        this.projects = proyecto.data;
+      })
+
+
+    })
+  }
+
 }

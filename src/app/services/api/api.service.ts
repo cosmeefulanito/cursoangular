@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, identity} from 'rxjs';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
@@ -36,6 +36,33 @@ export class ApiService {
       return this.http.post(environment.apiEndpoint+ 'proyectos', data, {headers: headers});
 
   }
+
+    //traemos un proyecto de la API
+    public getProyecto(jwtToken,id){
+      let headers = new HttpHeaders({ //BEARER LLEVA ESPACIO ANTES DE CONCATENAR EL TOKEN
+        'Authorization' : 'Bearer ' + jwtToken });
+  
+        return this.http.get(environment.apiEndpoint+ 'proyectos/'+id, {headers: headers});
+  
+    }
+
+        //editamos un proyecto de la API
+        public editProyecto(jwtToken,id,data){
+          let headers = new HttpHeaders({ //BEARER LLEVA ESPACIO ANTES DE CONCATENAR EL TOKEN
+            'Authorization' : 'Bearer ' + jwtToken });
+      
+            return this.http.put(environment.apiEndpoint+ 'proyectos/'+ id, data, {headers: headers});
+      
+        }
+
+        //eliminamos un proyecto de la API
+        public deleteProyecto(jwtToken,id){
+          let headers = new HttpHeaders({ //BEARER LLEVA ESPACIO ANTES DE CONCATENAR EL TOKEN
+            'Authorization' : 'Bearer ' + jwtToken });
+      
+            return this.http.delete(environment.apiEndpoint+ 'proyectos/'+ id, {headers: headers});
+      
+        }
 
 
 }
